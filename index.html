@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Daily Routine</title>
+
+    <!-- Tailwind and DaisyUI SetUp -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Fonts SetUp -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font awesome cdn -->
+    <script
+      src="https://kit.fontawesome.com/b7e20eccf8.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Styles -->
+    <style>
+      .font-poppins {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+
+    <!-- Tailwind Config Setup -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+              "dark-1": "#212121",
+              "dark-2": "#494949",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-poppins p-5">
+    <!-- Header Section -->
+    <section>
+      <div>
+        <div class="avatar flex items-start justify-between">
+            <div class="w-16 rounded-full border-blue-400 border-[3px]">
+                <img src="Md.Mehedi Hasan Rafy.jpg" alt="Avatar"/>
+            </div>
+            <div>
+                <div id="calendar" class="text-center flex items-center gap-3">
+                    <div>
+                        <i class="fa-regular fa-2x text-blue-400 fa-calendar-days"></i>
+                    </div>
+                    <div>
+                        <p id="date" class="text-lg font-semibold text-blue-600"></p>
+                        <p id="time" class="text-md"></p>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function updateTime() {
+                    const now = new Date();
+                    const optionsDate = {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                    };
+                    const dateString = now.toLocaleDateString(undefined, optionsDate);
+                    
+                    // Time options without seconds
+                    const optionsTime = {
+                        weekday: "short",
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        hour12: true 
+                    };
+                    const timeString = now.toLocaleTimeString(undefined, optionsTime);
+        
+                    document.getElementById("date").textContent = dateString;
+                    document.getElementById("time").textContent = timeString;
+                }
+        
+                setInterval(updateTime, 1000);
+                updateTime();
+            </script>
+        </div>
+      </div>
+
+      <div class="hero bg-blue-100 rounded-lg">
+        <div class="p-5">
+          <h1 class="text-4xl text-dark-1 font-bold">Hi! Rafy</h1>
+          <p class="pt-6 text-dark-2">
+            It's a new day. Get ready to achieve your goals, one step at a time.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Daily Routine Section -->
+    <section>
+      <div class="pb-4">
+        <h1 class="text-center text-dark-1 mt-12 text-3xl font-bold">My Daily Routine</h1>
+        <p class="text-center text-dark-2 pt-2">
+          Focused on prayer, work, and learning, my routine balances
+          productivity and spiritual well-being daily.
+        </p>
+      </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section
+      class="carousel carousel-center shadow-sm rounded-box w-full space-x-4 p-4"
+    >
+      <div class="carousel-item">
+        <section class="p-4 rounded-xl shadow-xl">
+          <div class="pb-4">
+            <h1 class="text-center text-2xl font-extrabold text-dark-1">
+              Morning
+            </h1>
+          </div>
+          <div class="card card-compact w-full gap-2">
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="flex justify-between items-center p-4">
+                  <h2 class="card-title">Time</h2>
+                  <i class="fa-regular fa-clock"></i>
+                </div>
+              </div>
+              <div class="card bg-blue-100 w-full">
+                <div class="flex justify-between items-center p-4">
+                  <h2 class="card-title">Action</h2>
+                  <i class="fa-solid fa-bolt-lightning"></i>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>5:00 AM</h2>
+                </div>
+              </div>
+              <div class="card bg-green-200 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between items-center">
+                    <h2>Fajr Prayer</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox checkbox-success border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>5:30 AM</h2>
+                </div>
+              </div>
+              <div class="card bg-cyan-200 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between items-center">
+                    <h2>CP</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox checkbox-info border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>7:30 AM</h2>
+                </div>
+              </div>
+              <div class="card bg-slate-200 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between items-center">
+                    <h2>Breakfast</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>8:00 AM</h2>
+                </div>
+              </div>
+              <div class="card bg-orange-200 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between items-center">
+                    <h2>Work Session 1</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox checkbox-warning border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>9:45 AM</h2>
+                </div>
+              </div>
+              <div class="card bg-slate-200 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between items-center">
+                    <h2>Break</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>10:00 AM</h2>
+                </div>
+              </div>
+              <div class="card bg-orange-200 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between items-center">
+                    <h2>Work Session 2</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox checkbox-warning border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>11:00 AM</h2>
+                </div>
+              </div>
+              <div class="card bg-fuchsia-300 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between items-center">
+                    <h2>Web Development 1</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox checkbox-secondary border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="carousel-item">
+        <section class="p-4 rounded-xl shadow-xl">
+          <div class="pb-4">
+            <h1 class="text-center text-dark-1 text-2xl font-extrabold">Day</h1>
+          </div>
+          <div class="card card-compact w-full gap-2">
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="flex justify-between items-center p-4">
+                  <h2 class="card-title">Time</h2>
+                  <i class="fa-regular fa-clock"></i>
+                </div>
+              </div>
+              <div class="card bg-pink-100 w-full">
+                <div class="flex justify-between items-center p-4">
+                  <h2 class="card-title">Action</h2>
+                  <i class="fa-solid fa-bolt-lightning"></i>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>1:00 PM</h2>
+                </div>
+              </div>
+              <div class="card bg-green-200 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between items-center">
+                    <h2>Dhuhr Prayer</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox checkbox-success border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>1:30 PM</h2>
+                </div>
+              </div>
+              <div class="card bg-slate-200 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between items-center">
+                    <h2>Lunch & Relaxation</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>2:30 PM</h2>
+                </div>
+              </div>
+              <div class="card bg-fuchsia-300 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between items-center">
+                    <h2>Web Development 2</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox checkbox-secondary border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>4:30 PM</h2>
+                </div>
+              </div>
+              <div class="card bg-green-200 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between items-center">
+                    <h2>Asr Prayer</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox checkbox-success border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>4:45 PM</h2>
+                </div>
+              </div>
+              <div class="card bg-fuchsia-300 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between items-center">
+                    <h2>Web Development 3</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox checkbox-secondary border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>6:15 PM</h2>
+                </div>
+              </div>
+              <div class="card bg-slate-200 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between items-center">
+                    <h2>Break</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="carousel-item">
+        <div class="p-4 rounded-xl shadow-xl">
+          <div class="pb-4">
+            <h1 class="text-center text-2xl font-extrabold">Night</h1>
+          </div>
+          <div class="card card-compact w-full gap-2">
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="flex justify-between items-center p-4">
+                  <h2 class="card-title">Time</h2>
+                  <i class="fa-regular fa-clock"></i>
+                </div>
+              </div>
+              <div class="card bg-blue-100 w-full">
+                <div class="flex justify-between items-center p-4">
+                  <h2 class="card-title">Action</h2>
+                  <i class="fa-solid fa-bolt-lightning"></i>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>6:30 PM</h2>
+                </div>
+              </div>
+              <div class="card bg-green-200 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between items-center">
+                    <h2>Maghrib Prayer</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox checkbox-success border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>7:00 PM</h2>
+                </div>
+              </div>
+              <div class="card bg-orange-200 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between items-center">
+                    <h2>Work Session 3</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox checkbox-warning border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>7:45 PM</h2>
+                </div>
+              </div>
+              <div class="card bg-green-200 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between items-center">
+                    <h2>Esha Prayer</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox checkbox-success border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>8:00 PM</h2>
+                </div>
+              </div>
+              <div class="card bg-fuchsia-300 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between items-center">
+                    <h2>Web Development <br> module release</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox checkbox-secondary border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>10:00 PM</h2>
+                </div>
+              </div>
+              <div class="card bg-slate-200 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between">
+                    <h2>Dinner</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>10:30 PM</h2>
+                </div>
+              </div>
+              <div class="card bg-orange-200 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between">
+                    <h2>Work Session 4</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox checkbox-warning border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <div class="card bg-blue-100 w-3/5">
+                <div class="p-4">
+                  <h2>11:30 PM</h2>
+                </div>
+              </div>
+              <div class="card bg-slate-200 w-full">
+                <div class="p-4">
+                  <div class="flex justify-between">
+                    <h2>Sleep</h2>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox border-2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="px-4 mt-12">
+        <div class="container mx-auto">
+            <p class="text-3xl font-bold mb-4 text-center">Keep Going!</p>
+            <blockquote class="italic text-sm mb-4 text-dark-2 bg-blue-100 p-4 rounded-xl">
+                "The strong believer is better and more beloved to Allah than the weak believer, while there is good in both. Strive for that which will benefit you, seek help from Allah, and do not be unable to do it. If something happens to you, do not say, 'If only I had done such and such,' rather say, 'Allah has decreed and what He wills, He does.' For 'if' opens the way for the work of Satan."  
+                <p class="text-right pt-4">— Sahih Muslim 2664</p>
+            </blockquote>
+        </div>
+    </footer>
+    
+  </body>
+</html>
